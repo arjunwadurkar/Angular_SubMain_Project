@@ -1,0 +1,10 @@
+.transition-image {
+    transition: transform 0.3s ease-in-out; /* Adjust the duration and timing function as needed */
+}
+
+.transition-image:hover {
+    transform: scale(1.1); /* Change the scale factor to your desired value */
+}
+.custom-dialog {
+    margin-top: 300px; /* Adjust the margin top value as needed */
+  }

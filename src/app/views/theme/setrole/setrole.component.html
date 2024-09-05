@@ -1,0 +1,86 @@
+
+<div>
+
+    <form   [formGroup]="registerForm1" (ngSubmit)="sendData()">
+    
+    <div mat-dialog-title>
+        <h1>Set Role</h1>
+    
+    </div>
+    <div mat-dialog-content style="padding-top: 10px;">
+        <div class="row">
+            <div class="col-6">
+              
+                    <mat-form-field appearance="outline" >
+                      <mat-label>ID</mat-label>
+                      <input matInput  formControlName="id" readonly>
+                      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                      <!-- <mat-hint>Hint</mat-hint> -->
+                    </mat-form-field>
+                    <br>
+                    <!-- <span *ngIf="registerForm1.controls.firstName.hasError('required') && registerForm1.get('firstName').touched">First Name is Required</span>
+                  <span *ngIf="registerForm1.controls.firstName.hasError('minlength')">Enter Valid First Name</span> -->
+                    </div>
+                
+            
+            <div class="col-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput placeholder="Ex. Wadurkar" formControlName="name" readonly >
+                    <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                  </mat-form-field>
+                  <br>
+                  <!-- <span *ngIf="registerForm1.controls.lastName.hasError('required') && registerForm1.get('lastName').touched">Last Name is Required</span>
+                  <span *ngIf="registerForm1.controls.lastName.hasError('minlength')">Enter Valid Last Name</span> -->
+    
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-6">
+              
+                    <mat-form-field appearance="outline">
+                      <mat-label>Email Address</mat-label>
+                      <input matInput placeholder="Ex. abc12@gmail.com" formControlName="email" email readonly>
+                      <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                      <!-- <mat-hint>Hint</mat-hint> -->
+                    </mat-form-field>
+                    <br>
+                    <!-- <span *ngIf="registerForm1.controls.email.hasError('required') && registerForm1.get('email').touched">Email Address is Required</span> -->
+                    </div>
+                
+            
+            <div class="col-6">
+                <mat-form-field appearance="outline">
+                    <mat-label>Set Role</mat-label>
+                    <mat-select formControlName="role">
+                      <mat-option value="user">User</mat-option>
+                      
+                      <mat-option value="admin">Admin</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                    <br>
+                    <!-- <span *ngIf="registerForm1.controls.mobile.hasError('required') && registerForm1.get('mobile').touched">mobile Number Required</span>
+                    <span *ngIf="registerForm1.controls.mobile.hasError('pattern') ">Enter Valid Mobile Number</span> -->
+                  
+    
+            </div>
+        </div>
+    
+        
+    
+    
+    </div>
+    <div mat-dialog-actions>
+        <div class="mb-3" style="margin-left: 20px;">
+            <button class="btn btn-primary me-2" type="submit">Save Changes</button>
+            <button class="btn btn-danger" type="button" [mat-dialog-close]="false">Cancel</button>
+          </div>
+    </div>
+    
+    </form>
+    
+    </div>
+    
+    

@@ -1,0 +1,48 @@
+<div class="container-fluid" style="background-color: #f8f9fa;">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        
+        <form [formGroup]="dataForm" (ngSubmit)="onSubmit()" class="mt-4">
+            <h2 class="text-center mb-4" style="color: #007bff; margin-top: 20px;">{{data1 ? 'Update Product' : 'ADD Product'}}</h2>
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" id="title" formControlName="title" class="form-control" placeholder="Enter title">
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="text" id="price" formControlName="price" class="form-control" placeholder="Enter price">
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" formControlName="description" class="form-control" placeholder="Enter description"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <input type="text" id="category" formControlName="category" class="form-control" placeholder="Enter category">
+          </div>
+          <div class="mb-3">
+            <label for="imageUrl" class="form-label">Image URL</label>
+            <input type="text" id="image" formControlName="image" class="form-control" placeholder="Enter image URL">
+          </div>
+          <div  class="mb-3">
+            <div class="mb-3">
+              <label for="rate" class="form-label">Rate</label>
+              <input type="text" id="rate" formControlName="rate" class="form-control" placeholder="Enter rate">
+            </div>
+            <div class="mb-3">
+              <label for="count" class="form-label">Count</label>
+              <input type="text" id="count" formControlName="count" class="form-control" placeholder="Enter count">
+            </div>
+          </div>
+          <div mat-dialog-actions>
+            <button mat-raised-button color="primary" type="submit">{{data1 ? 'Update' : 'Save'}}</button>
+            
+            <button mat-raised-button color="warn" type="button" [mat-dialog-close]="false">Cancel</button>
+        
+        </div>
+        
+        </form>
+      </div>
+    </div>
+  </div>
+  

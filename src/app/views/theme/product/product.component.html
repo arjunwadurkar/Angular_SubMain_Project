@@ -1,0 +1,62 @@
+
+<div class="row mb-3" style="width: 500px;">
+  <div class="col">
+    <input type="text" class="form-control" (input)="applyFilter()" placeholder="Search Product Name" autocomplete="off" [(ngModel)]="filtername">
+  </div>
+  <div class="col-auto"  *ngIf="show">
+    <button class="btn btn-secondary" (click)="openSignUp()" >Add New Product</button>
+  </div>
+</div>
+   
+<!-- </div>
+<c-input-group class="mb-3">
+    <span cInputGroupText>
+      <svg cIcon name="cilUser"></svg>
+    </span>
+    <input autoComplete="username" cFormControl placeholder="Email" formControlName="email" />
+  </c-input-group> -->
+
+ 
+
+<div class="fade-in"  *ngFor="let item of filteredData " >
+    <div class="card mb-4 " style="transform: scale(1,1);">
+     
+      <div class="card-body"  >
+
+       
+
+        <div class="row" >
+            <div class="col-4"> <img src={{item.image}} height="270vh" width="270vh" class="transition-image" alt="jngfj"></div>
+        <div class="col-8">
+            <h1>{{item.title | uppercase}}</h1>
+            <p>{{item.category | uppercase}}</p>
+            <p class="text-danger mb-1"> <b>Ratings : </b> <span>{{item.rate }}⭐ </span><span style="color: black;">&nbsp;&nbsp;Votes : {{item.count}}</span></p>
+            <p>{{item.description}}</p>
+            <h1>{{item.price | currency:'INR'}}&nbsp;&nbsp;<sub>M.R.P: <s>{{item.price*1.2 | currency:'INR' }}</s></sub></h1>
+            <p>{{item.price | currency:'INR'}}</p>
+            <div class="mt-3 d-flex justify-content-between align-items-center">
+            <div>
+                <button *ngIf="!show" class="btn btn-primary me-2" style="background-color: #F7CA00; color: black; border: none ; border-radius: 20px;" [routerLink]="['/theme/viewproduct', item.productid]">View Details</button>
+                
+                <button *ngIf="!show" class="btn btn-success" style="background-color: #FFA41C ; color: black; border: none ; border-radius: 20px;" (click)="AddToCart(item.productid)">Add to Cart</button>
+            
+
+                <button *ngIf="show" class="btn btn-warning me-2" style=" width: 100px; color: black; border: none ; border-radius: 20px;" (click)="openEdit(item)">Edit</button>
+                
+                <button *ngIf="show" class="btn btn-danger" style=" width: 100px; color: black; border: none ; border-radius: 20px;" (click)="delete(item.productid)">Delete</button>
+                
+            
+              </div>
+              <!-- <div *ngIf="show" >
+                <span type="button"  (click)="openEdit(item)" class="me-2" style="color: blue; text-decoration: underline;">Edit</span>
+                <span type="button" (click)="delete(item.id)" class="me-2" style="color: red; text-decoration: underline;">Delete</span>
+            </div> -->
+          </div>
+
+           
+        </div> 
+        </div>
+
+
+
+      </div></div></div>

@@ -1,0 +1,37 @@
+
+<div class="fade-in"   >
+    <div class="card mb-4 ">
+     
+      <div class="card-body"  >
+
+        <table class="table" >
+            
+            <tbody  *ngFor="let item of data">
+              <tr >
+                
+                <td><img src="{{item.image}}" height="150vh" width="150vh"></td>
+                <td><h3><b>{{item.title}}</b></h3>
+                 <p>{{item.description}}</p>
+                <br>
+                   <button class="btn btn-danger" (click)="deleteCartItem(item.productId)">Remove</button></td>
+                <td><b>{{item.price | currency:'INR'}}</b></td>
+                <td><div class="input-group" style="width: 110px;">
+                    <div class="input-group-prepend" style="display: flex; justify-content:center">
+                      <button class="btn btn-outline-secondary" style="background-color: lightgrey;" type="button" (click)="decrement(item)">-</button>
+                    </div>
+                    <input type="text" class="form-control" [(ngModel)]="item.quantity" readonly>
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary" type="button" style="background-color: lightgrey;" (click)="increment(item)">+</button>
+                    </div>
+                    
+                  </div></td>
+                  
+                
+              </tr>
+             
+            </tbody>
+          </table>
+
+      </div>
+    </div>
+</div>

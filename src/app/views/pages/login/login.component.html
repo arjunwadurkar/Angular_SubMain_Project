@@ -1,0 +1,66 @@
+<div class="bg-light min-vh-100 d-flex flex-row align-items-center">
+  <c-container>
+    <c-row class="justify-content-center">
+      <c-col md="8">
+        <c-card-group>
+          <c-card class="p-4">
+            <c-card-body>
+              <form cForm [formGroup]="signinForm" (ngSubmit)="signinForm">
+                <h1>Login</h1>
+                <p class="text-medium-emphasis">Sign In to your account</p>
+                <c-input-group class="mb-3">
+                  <span cInputGroupText>
+                    <svg cIcon name="cilUser"></svg>
+                  </span>
+                  <input autoComplete="email" cFormControl placeholder="Email" formControlName="email" />
+                </c-input-group>
+                <p *ngIf="signinForm.controls.email.hasError('required') && signinForm.get('email').touched " style="color: red;">Email is Required</p>
+                <p *ngIf="signinForm.controls.email.hasError('email') " style="color: red;">Please Enter Correct Email</p>
+                <c-input-group class="mb-4">
+                  <span cInputGroupText>
+                    <svg cIcon name="cilLockLocked"></svg>
+                  </span>
+                  <input
+                    autoComplete="current-password"
+                    cFormControl
+                    placeholder="Password"
+                    type="password" formControlName="password" />
+                </c-input-group>
+                <p *ngIf="signinForm.controls.password.hasError('required') && signinForm.get('password').touched " style="color: red;">Passwors is Required</p>
+                  <p *ngIf="signinForm.controls.password.hasError('minlength')" style="color: red;">Minimum 8-character Required</p>
+                <c-row>
+                  <c-col xs="6">
+                    <button cButton class="px-4" color="primary"  type="submit" (click)="signInData()">
+                      Login
+                    </button>
+                  </c-col>
+                  <c-col class="text-right" xs="6">
+                    <button cButton class="px-0" color="link">
+                      Forgot password?
+                    </button>
+                  </c-col>
+                </c-row>
+              </form>
+            </c-card-body>
+          </c-card>
+          <c-card [ngStyle]="{'width.%': 44}" class="text-white bg-primary py-5">
+            <c-card-body class="text-center">
+              <div>
+                <h2>WelCome</h2>
+                <br>
+                <p>
+                  Not a Member?
+                  Register from Here...
+                 
+                </p>
+                <button [active]="true" cButton class="mt-3" color="primary" routerLink="/register">
+                  Register Now!
+                </button>
+              </div>
+            </c-card-body>
+          </c-card>
+        </c-card-group>
+      </c-col>
+    </c-row>
+  </c-container>
+</div>
